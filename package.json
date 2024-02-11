@@ -9,7 +9,9 @@
     "prod": "npm run build && npm run serve:prod",
     "serve:prod": "serve dist",
     "serve:dev": "browser-sync start --server build --files build",
+    "serve:dev:static": "serve build",
     "start": "concurrently \"sleep 5 && npm run serve:dev\" \"npm run watch\" --names \"💻,📦\" --prefix name",
+    "start:static": "concurrently \"sleep 5 && npm run serve:dev:static\" \"npm run watch\" --names \"💻,📦\" --prefix name",
     "build": "static-site-builder build",
     "now-build": "static-site-builder build",
     "watch": "static-site-builder watch",
@@ -35,6 +37,8 @@
     "vercel": "^28.20.0"
   },
   "dependencies": {
+    "@webcomponents/custom-elements": "^1.6.0",
+    "@webcomponents/webcomponentsjs": "^2.8.0",
     "jquery": "^3.7.1",
     "jquery-ui": "^1.13.2",
     "lodash": "^4.17.21"
@@ -48,7 +52,7 @@
     "image": null,
     "themeColor": "#000000"
   },
-  "homepage": "/",
+  "homepage": "./",
   "eslintConfig": {
     "extends": "henderea"
   }
